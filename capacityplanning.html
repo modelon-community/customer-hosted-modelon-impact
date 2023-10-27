@@ -13,8 +13,10 @@
       
       
       
+        <link rel="prev" href="hwrequirements.html">
       
-        <link rel="next" href="productscope.html">
+      
+        <link rel="next" href="firewall.html">
       
       
       <link rel="icon" href="assets/modelonimpact_icon.ico">
@@ -22,7 +24,7 @@
     
     
       
-        <title>Customer Hosted Modelon Impact - Installation and Administration Guide🔗</title>
+        <title>Capacity Planning - Customer Hosted Modelon Impact - Installation and Administration Guide🔗</title>
       
     
     
@@ -73,7 +75,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#introduction" class="md-skip">
+        <a href="#capacity-planning" class="md-skip">
           Skip to content
         </a>
       
@@ -108,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Introduction
+              Capacity Planning
             
           </span>
         </div>
@@ -196,18 +198,9 @@
       
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="index.html" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -216,7 +209,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -282,9 +274,29 @@
       
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="capacityplanning.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Capacity Planning
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="capacityplanning.html" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -293,6 +305,47 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#disk-capacity-and-performance" class="md-nav__link">
+    Disk Capacity and Performance
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cpu-and-memory" class="md-nav__link">
+    CPU and Memory
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#network-speed" class="md-nav__link">
+    Network Speed
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -412,6 +465,35 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#disk-capacity-and-performance" class="md-nav__link">
+    Disk Capacity and Performance
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cpu-and-memory" class="md-nav__link">
+    CPU and Memory
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#network-speed" class="md-nav__link">
+    Network Speed
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -425,18 +507,91 @@
                   
 
 
-<h1 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&#128279;</a></h1>
-<p>This manual will guide you through the installation of Modelon Impact on your own Linux server from start to finish.</p>
-<p>You will get information about what is needed to run Modelon Impact, how to plan for the necessary server resources, as well as installation, upgrading, and common system administration tasks such as backup and migration.</p>
-<h1 id="what-is-customer-hosted-modelon-impact">What Is Customer Hosted Modelon Impact?<a class="headerlink" href="#what-is-customer-hosted-modelon-impact" title="Permanent link">&#128279;</a></h1>
-<p>Customer Hosted Modelon Impact is for organizations that have opted to install Modelon Impact on their own server, physical or virtual, as an alternative to the software-as-a-service solution managed by Modelon at <a href="https://impact.modelon.cloud">impact.modelon.cloud</a>.</p>
-<p>Customer Hosted Modelon Impact runs on a stand-alone server.</p>
-<h1 id="document-conventions">Document conventions<a class="headerlink" href="#document-conventions" title="Permanent link">&#128279;</a></h1>
-<p>Throughout this document we refer to the installation of Modelon Impact using the following URLs. Your installation will use other URLs and you should substitute your own address whenever you see one of these addresses:</p>
+<h1 id="capacity-planning">Capacity Planning<a class="headerlink" href="#capacity-planning" title="Permanent link">&#128279;</a></h1>
+<p>To get you started with the capacity planning, run <code>modelonimpact.sh stats</code> to get necessary information about your Ubuntu server.</p>
+<div class="codehilite"><pre><span></span><code>$<span class="w"> </span>/var/impact/modelonimpact.sh<span class="w"> </span>stats
+</code></pre></div>
+
+<p>This will provide the following information:</p>
 <ul>
-<li>Host: modelon-impact.mycompany.com</li>
-<li>Domain: mycompany.com, *.mycompany.com</li>
+<li>Remote login (SSHD)</li>
+<li>Fully qualified domain name (FQDN)</li>
+<li>Domain name</li>
+<li>Configuration file (without usernames and passwords)</li>
+<li>Whether the FQDN is registered in DNS</li>
+<li>OS Release</li>
+<li>CPUs, cores, and sockets</li>
+<li>Available space on all disk partitions</li>
+<li>Validation of TLS certificate and key</li>
+<li>Checking the validity period of your TLS certificate</li>
+<li>Disk write speed and latency for the /var partition</li>
+<li>Network interfaces</li>
+<li>Default gateway</li>
+<li>SELinux status</li>
+<li>Firewall rules</li>
 </ul>
+<h2 id="disk-capacity-and-performance">Disk Capacity and Performance<a class="headerlink" href="#disk-capacity-and-performance" title="Permanent link">&#128279;</a></h2>
+<p>We recommend using local storage using SSD drives, for performance reasons. Model compilation times will be noticeably longer with slower storage, and handling large result sets will also be impacted. Saving backups to network storage could be beneficial.</p>
+<p>Modelon Impact and all data is placed in the <code>/var</code> folder.</p>
+<p>Independent of the number of users, the <code>/var</code> partition should be at least 50 GB to accommodate the Modelon Impact installation. Additional disk space is needed for user data and the size of this depends entirely on the number of users and their usage of Modelon Impact. In our experience most users will need at least 20 GB of disk space each, advanced users will require (sometimes substantially) more.</p>
+<p>For this reason, you may want to configure LVM (Logical Volume Management) when installing the server, as it gives you the flexibility to add more disk if needed.</p>
+<p>Note that backups taken via the <code>modelonimpact.sh</code> script are stored locally, in the <code>/var/impactbackups</code> folder by default, and space for this needs to be accounted for.</p>
+<p>The backup directory can be configured during the installation, and anytime a change is required. However, if you change backup location, the restore feature will not find the older backups, unless you also move them manually to the new location.</p>
+<h2 id="cpu-and-memory">CPU and Memory<a class="headerlink" href="#cpu-and-memory" title="Permanent link">&#128279;</a></h2>
+<p>There is no maximum size for the server. The absolute minimum size of a server for Modelon Impact is:</p>
+<ul>
+<li>CPU: 4 cores</li>
+<li>Memory: 8 GB</li>
+</ul>
+<p>This size would allow a single user to start Modelon Impact and do light-weight tasks. To find out the desired size for your server, use the following method.</p>
+<p>The base requirements for a server running a Modelon Impact installation with no active users are:</p>
+<ul>
+<li>CPU: 2 cores</li>
+<li>Memory: 3 GB</li>
+</ul>
+<p>This includes the resources required by the Linux operating system. Every logged-on user will require additional memory and CPU. Use the following table to estimate the additional CPU and memory requirement, based on:</p>
+<ul>
+<li>The number of simultaneously logged on users.</li>
+<li>How often a user runs compilations and simulations in Modelon Impact.</li>
+<li>Your purchased productivity level.</li>
+</ul>
+<p>This table tells you how much additional resources are needed per user.</p>
+<ul>
+<li>The lower CPU and memory values are for a logged in user doing light tasks such as editing a model.</li>
+<li>The higher values in the table below are the estimated maximum resource consumption per user when doing heavy compilation and simulation operations. Especially memory consumption depends heavily on the size and complexity of your models.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th></th>
+<th style="text-align: center;">Modelon Impact 1</th>
+<th style="text-align: center;">Modelon Impact 4</th>
+<th style="text-align: center;">Modelon Impact 16</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CPU per user</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">1-5</td>
+<td style="text-align: center;">1-16</td>
+</tr>
+<tr>
+<td>Memory per user</td>
+<td style="text-align: center;">3-8 GB</td>
+<td style="text-align: center;">4-10 GB</td>
+<td style="text-align: center;">10-24 GB</td>
+</tr>
+</tbody>
+</table>
+<p>Add the sum of all resources required by logged on users and add these numbers to the base requirements.</p>
+<p>Choosing the correct server depends on your organization’s usage. Plan for an overhead (<em>server resources, minus minimum requirements</em>) that is sufficient for the number of users doing simulations at the same time.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The productivity level (Modelon Impact 1/4/16) will be equal for all users on a server, it is not possible to specify the productivity level for an individual user.</p>
+</div>
+<h2 id="network-speed">Network Speed<a class="headerlink" href="#network-speed" title="Permanent link">&#128279;</a></h2>
+<p>Being a self-contained application, Modelon Impact has low requirements on network speed. </p>
 
 
 
