@@ -399,7 +399,7 @@
       
         <li class="md-nav__item">
   <a href="#stopping-and-starting-modelon-impact" class="md-nav__link">
-    Stopping and starting Modelon Impact
+    Stopping and Starting Modelon Impact
   </a>
   
 </li>
@@ -414,6 +414,13 @@
         <li class="md-nav__item">
   <a href="#renew-the-tls-certificate" class="md-nav__link">
     Renew the TLS Certificate
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#renew-the-k3s-certificate" class="md-nav__link">
+    Renew the K3s Certificate
   </a>
   
 </li>
@@ -543,7 +550,7 @@
       
         <li class="md-nav__item">
   <a href="#stopping-and-starting-modelon-impact" class="md-nav__link">
-    Stopping and starting Modelon Impact
+    Stopping and Starting Modelon Impact
   </a>
   
 </li>
@@ -558,6 +565,13 @@
         <li class="md-nav__item">
   <a href="#renew-the-tls-certificate" class="md-nav__link">
     Renew the TLS Certificate
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#renew-the-k3s-certificate" class="md-nav__link">
+    Renew the K3s Certificate
   </a>
   
 </li>
@@ -649,7 +663,7 @@
 
 <h1 id="system-administration">System Administration<a class="headerlink" href="#system-administration" title="Permanent link">&#128279;</a></h1>
 <p>With Modelon Impact installed, it will start automatically on each reboot. The admin script is used to manually stop and start the service.</p>
-<h2 id="stopping-and-starting-modelon-impact">Stopping and starting Modelon Impact<a class="headerlink" href="#stopping-and-starting-modelon-impact" title="Permanent link">&#128279;</a></h2>
+<h2 id="stopping-and-starting-modelon-impact">Stopping and Starting Modelon Impact<a class="headerlink" href="#stopping-and-starting-modelon-impact" title="Permanent link">&#128279;</a></h2>
 <p>Run the following command to stop Modelon Impact:</p>
 <div class="codehilite"><pre><span></span><code>$<span class="w"> </span>/var/impact/modelonimpact.sh<span class="w"> </span>stop
 </code></pre></div>
@@ -679,7 +693,7 @@ Please<span class="w"> </span>enter<span class="w"> </span>the<span class="w"> <
 
 Ubuntu<span class="w"> </span>Release:<span class="w"> </span><span class="m">22</span>.04<span class="w">           </span>RAM<span class="w"> </span>Tot<span class="w"> </span>/<span class="w"> </span>Avail:<span class="w"> </span><span class="m">15</span>.58<span class="w"> </span>GB<span class="w"> </span>/<span class="w"> </span><span class="m">11</span>.93<span class="w"> </span>GB
 Disk<span class="w"> </span>size<span class="w"> </span>/var:<span class="w"> </span>97G<span class="w">             </span>Load<span class="w"> </span>Average:<span class="w"> </span><span class="m">0</span>.78<span class="w"> </span><span class="m">0</span>.80<span class="w"> </span><span class="m">0</span>.82
-Avail.<span class="w"> </span>space<span class="w"> </span>on<span class="w"> </span>/var:<span class="w"> </span>54G
+Avail.<span class="w"> </span>space<span class="w"> </span>on<span class="w"> </span>/var:<span class="w"> </span>54G<span class="w">   </span>K3s<span class="w"> </span>cert<span class="w"> </span>expiration:<span class="w"> </span><span class="m">2023</span>-11-29
 
 Modelon<span class="w"> </span>Impact<span class="w"> </span>is<span class="w"> </span>running<span class="w"> </span>on:<span class="w"> </span>https://modelon-impact.mycompany.com
 Keycloak<span class="w"> </span>IAM<span class="w"> </span>is<span class="w"> </span>running<span class="w"> </span>on:<span class="w">   </span>https://modelon-impact.mycompany.com/iam/auth/admin
@@ -720,7 +734,7 @@ Starting<span class="w"> </span>Modelon<span class="w"> </span>Impact:
 
 Ubuntu<span class="w"> </span>Release:<span class="w"> </span><span class="m">22</span>.04<span class="w">           </span>RAM<span class="w"> </span>Tot<span class="w"> </span>/<span class="w"> </span>Avail:<span class="w"> </span><span class="m">15</span>.58<span class="w"> </span>GB<span class="w"> </span>/<span class="w"> </span><span class="m">13</span>.26<span class="w"> </span>GB
 Disk<span class="w"> </span>size<span class="w"> </span>/var:<span class="w"> </span>97G<span class="w">             </span>Load<span class="w"> </span>Average:<span class="w"> </span><span class="m">0</span>.47<span class="w"> </span><span class="m">0</span>.60<span class="w"> </span><span class="m">0</span>.76
-Avail.<span class="w"> </span>space<span class="w"> </span>on<span class="w"> </span>/var:<span class="w"> </span>56G
+Avail.<span class="w"> </span>space<span class="w"> </span>on<span class="w"> </span>/var:<span class="w"> </span>56G<span class="w">   </span>K3s<span class="w"> </span>cert<span class="w"> </span>expiration:<span class="w"> </span><span class="m">2023</span>-11-29
 
 Modelon<span class="w"> </span>Impact<span class="w"> </span>is<span class="w"> </span>running<span class="w"> </span>on:<span class="w"> </span>https://modelon-impact.mycompany.com
 Keycloak<span class="w"> </span>IAM<span class="w"> </span>is<span class="w"> </span>running<span class="w"> </span>on:<span class="w">   </span>https://modelon-impact.mycompany.com/iam/auth/admin
@@ -738,6 +752,27 @@ secret<span class="w"> </span><span class="s2">&quot;impact-ssl-certificate&quot
 secret/impact-ssl-certificate<span class="w"> </span>created
 </code></pre></div>
 
+<h2 id="renew-the-k3s-certificate">Renew the K3s Certificate<a class="headerlink" href="#renew-the-k3s-certificate" title="Permanent link">&#128279;</a></h2>
+<p>K3s, that Modelon Impact runs on, creates it own internal certificate which is needed for communicating with the cluster. The certificate is valid for twelve months. If the expiration date is less than ninety days away, a new certificate will be created when you restart Modelon Impact. </p>
+<p>The script <code>/var/impact/modelonimpact.sh</code> will show you the expiration date of the certificate, and will give you a reminder to restart Modelon Impact if it expires in less than ninety days.</p>
+<div class="codehilite"><pre><span></span><code>$<span class="w"> </span>/var/impact/modelonimpact.sh
+<span class="w"> </span>__<span class="w">  </span>__<span class="w">           </span>_<span class="w">      </span>_<span class="w">               </span>___<span class="w">                            </span>_
+<span class="p">|</span><span class="w">  </span><span class="se">\/</span><span class="w">  </span><span class="p">|</span><span class="w"> </span>___<span class="w">   </span>__<span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>___<span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>___<span class="w">  </span>_<span class="w"> </span>__<span class="w">   </span><span class="p">|</span>_<span class="w"> </span>_<span class="p">|</span>_<span class="w"> </span>__<span class="w"> </span>___<span class="w">  </span>_<span class="w"> </span>__<span class="w">   </span>__<span class="w"> </span>_<span class="w">  </span>___<span class="p">|</span><span class="w"> </span><span class="p">|</span>_
+<span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="se">\/</span><span class="p">|</span><span class="w"> </span><span class="p">|</span>/<span class="w"> </span>_<span class="w"> </span><span class="se">\ </span>/<span class="w"> </span>_<span class="sb">`</span><span class="w"> </span><span class="p">|</span>/<span class="w"> </span>_<span class="w"> </span><span class="se">\ </span><span class="p">|</span>/<span class="w"> </span>_<span class="w"> </span><span class="se">\|</span><span class="w"> </span><span class="s1">&#39;_ \   | || &#39;</span>_<span class="w"> </span><span class="sb">`</span><span class="w"> </span>_<span class="w"> </span><span class="se">\|</span><span class="w"> </span><span class="err">&#39;</span>_<span class="w"> </span><span class="se">\ </span>/<span class="w"> </span>_<span class="sb">`</span><span class="w"> </span><span class="p">|</span>/<span class="w"> </span>__<span class="p">|</span><span class="w"> </span>__<span class="p">|</span>
+<span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w">  </span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="o">(</span>_<span class="o">)</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="o">(</span>_<span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w">  </span>__/<span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="o">(</span>_<span class="o">)</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w">  </span><span class="p">|</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="p">|</span>_<span class="o">)</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="o">(</span>_<span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="o">(</span>__<span class="p">|</span><span class="w"> </span><span class="p">|</span>_
+<span class="p">|</span>_<span class="p">|</span><span class="w">  </span><span class="p">|</span>_<span class="p">|</span><span class="se">\_</span>__/<span class="w"> </span><span class="se">\_</span>_,_<span class="p">|</span><span class="se">\_</span>__<span class="p">|</span>_<span class="p">|</span><span class="se">\_</span>__/<span class="p">|</span>_<span class="p">|</span><span class="w"> </span><span class="p">|</span>_<span class="p">|</span><span class="w"> </span><span class="p">|</span>___<span class="p">|</span>_<span class="p">|</span><span class="w"> </span><span class="p">|</span>_<span class="p">|</span><span class="w"> </span><span class="p">|</span>_<span class="p">|</span><span class="w"> </span>.__/<span class="w"> </span><span class="se">\_</span>_,_<span class="p">|</span><span class="se">\_</span>__<span class="p">|</span><span class="se">\_</span>_<span class="p">|</span>
+<span class="w">                                                      </span><span class="p">|</span>_<span class="p">|</span>
+<span class="w">               </span>Accurate<span class="w"> </span>Simulations.<span class="w"> </span>Better<span class="w"> </span>Decisions.
+
+The<span class="w"> </span>K3s<span class="w"> </span>certificate<span class="w"> </span>expires<span class="w"> </span><span class="k">in</span><span class="w"> </span>less<span class="w"> </span>than<span class="w"> </span><span class="m">90</span><span class="w"> </span>days.<span class="w"> </span>Please<span class="w"> </span>restart<span class="w"> </span>Modelon<span class="w"> </span>Impact<span class="w"> </span>to<span class="w"> </span>generate<span class="w"> </span>a<span class="w"> </span>new<span class="w"> </span>certificate.
+
+Ubuntu<span class="w"> </span>Release:<span class="w"> </span><span class="m">22</span>.04<span class="w">           </span>RAM<span class="w"> </span>Tot<span class="w"> </span>/<span class="w"> </span>Avail:<span class="w"> </span><span class="m">15</span>.58<span class="w"> </span>GB<span class="w"> </span>/<span class="w"> </span><span class="m">13</span>.31<span class="w"> </span>GB
+Disk<span class="w"> </span>size<span class="w"> </span>/var:<span class="w"> </span>97G<span class="w">             </span>Load<span class="w"> </span>Average:<span class="w"> </span><span class="m">0</span>.08<span class="w"> </span><span class="m">0</span>.14<span class="w"> </span><span class="m">0</span>.11
+Avail.<span class="w"> </span>space<span class="w"> </span>on<span class="w"> </span>/var:<span class="w"> </span>62G<span class="w">       </span>K3s<span class="w"> </span>cert<span class="w"> </span>expiration:<span class="w"> </span><span class="m">2023</span>-11-29
+</code></pre></div>
+
+<p>To restart Modelon Impact, run the commands <code>/var/impact/modelonimpact.sh stop</code> and <code>/var/impact/modelonimpact.sh start</code>. The certificate will then be automatically regenerated.</p>
+<p>Note that Modelon Impact will be unavailable for a few minutes, you may want to plan this operation in advance.</p>
 <h2 id="backup-modelon-impact">Backup Modelon Impact<a class="headerlink" href="#backup-modelon-impact" title="Permanent link">&#128279;</a></h2>
 <p>The backup routine creates a snapshot of the entire Modelon Impact service. </p>
 <p>The backup will temporarily pause the Modelon Impact service until the backup is done. You may want to schedule your backup to a period with less activity. You may want to add the backup as a cron-job on your server.</p>
@@ -879,7 +914,7 @@ impact-provisioning-1<span class="w"> </span>exited<span class="w"> </span>with<
 
 <span class="s1">Ubuntu Release: 22.04           RAM Tot / Avail: 15.56 GB / 12.28 GB</span>
 <span class="s1">Disk size /var: 29G             Load Average: 0.57 0.48 0.41</span>
-<span class="s1">Avail. space on /var: 26G</span>
+<span class="s1">Avail. space on /var: 26G   K3s cert expiration: 2023-11-29</span>
 
 <span class="s1">Modelon Impact is running on: https://modelon-impact.mycompany.com</span>
 <span class="s1">Keycloak IAM is running on:   https://modelon-impact.mycompany.com/iam/auth/admin</span>
