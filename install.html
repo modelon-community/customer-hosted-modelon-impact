@@ -727,6 +727,12 @@ Then,<span class="w"> </span>open<span class="w"> </span>up<span class="w"> </sp
 </table>
 <p>You are now ready to launch Modelon Impact by visiting the Modelon Impact front page and logging on using the account you just created in Keycloak IAM.</p>
 <p>For further guidance, please refer to our <a href="https://help.modelon.com/">help center</a>.</p>
+<h2 id="enable-windows-fmu-exports">Enable Windows FMU exports<a class="headerlink" href="#enable-windows-fmu-exports" title="Permanent link">&#128279;</a></h2>
+<p>Modelon Impact supports exporting of Windows FMU, via cross-compilation. Because of licensing requirements, you need to download Microsoft libraries separately using command: </p>
+<div class="codehilite"><pre><span></span><code>$<span class="w"> </span>/var/impact/modelonimpact.sh<span class="w"> </span>add-cross-compilation-support
+</code></pre></div>
+
+<p>This will download Microsoft libraries using <a href="https://github.com/Jake-Shadle/xwin/">xwin</a>, ask you to accept the Microsoft <a href="https://go.microsoft.com/fwlink/?LinkId=2086102">license agreement</a> and add them to Modelon Impact.</p>
 
 
 
