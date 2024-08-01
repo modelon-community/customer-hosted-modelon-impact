@@ -16,7 +16,7 @@
         <link rel="prev" href="capacityplanning.html">
       
       
-        <link rel="next" href="modelonimpactscript.html">
+        <link rel="next" href="proxy.html">
       
       
       <link rel="icon" href="assets/modelonimpact_icon.ico">
@@ -324,6 +324,25 @@
   
   
     <li class="md-nav__item">
+      <a href="proxy.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Outbound Proxies
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
       <a href="modelonimpactscript.html" class="md-nav__link">
         
   
@@ -430,7 +449,7 @@
 <h1 id="firewall-and-selinux">Firewall and SELinux<a class="headerlink" href="#firewall-and-selinux" title="Permanent link">&#128279;</a></h1>
 <p>Modelon Impact will run with SELinux enabled, and it will configure iptables for Docker. We recommended that you further protect your server with an external firewall.</p>
 <h1 id="load-balancer-web-application-gateways">Load Balancer / Web Application Gateways<a class="headerlink" href="#load-balancer-web-application-gateways" title="Permanent link">&#128279;</a></h1>
-<p>If needed, Customer Hosted Modelon Impact can be installed behind an existing external load balancer / web application gateway. If the external device terminates TLS sessions, you will have to install the same TLS certificate both in Modelon Impact and the load balancer. We recommend using a health probe that fetches <code>https://[YOUR_IMPACT_SERVER]/hub/login</code>. You are responsible for configuration of any external load balancer / web application gateway.</p>
+<p>If needed, Customer Hosted Modelon Impact can be installed behind an existing external load balancer / web application gateway / firewall. If the external device terminates TLS sessions, you will have to install the same TLS certificate both in Modelon Impact and the load balancer. We recommend using a health probe that fetches <code>https://[YOUR_IMPACT_SERVER]/hub/login</code>. You are responsible for configuration of any external devices. Note that Modelon Impact makes use of HTTPS and WebSocket protocols for traffic to the server. </p>
 
 
 
