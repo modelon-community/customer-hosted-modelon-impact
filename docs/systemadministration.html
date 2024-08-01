@@ -314,6 +314,25 @@
   
   
     <li class="md-nav__item">
+      <a href="proxy.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Outbound Proxies
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
       <a href="modelonimpactscript.html" class="md-nav__link">
         
   
@@ -885,7 +904,30 @@ impact-provisioning-1<span class="w"> </span>exited<span class="w"> </span>with<
 <p>Uninstalling Modelon Impact will not remove the files in <code>/etc/impact/</code>. Nor will it remove backups which reside in the backup folder set in the config file.</p>
 <p>You can now install Modelon Impact again and restore your backup to get the service up and running, with all configuration settings and user data intact.</p>
 <h2 id="upgrade-modelon-impact">Upgrade Modelon Impact<a class="headerlink" href="#upgrade-modelon-impact" title="Permanent link">&#128279;</a></h2>
-<p>This is the first release of the product, upgrading instructions will come with the next release.</p>
+<p>It's possible to upgrade Modelon Impact in-place without losing any information in the system. Assuming you have installed Modelon Impact in the default location, <code>/var/impact</code>, the procedure is as follows. </p>
+<p>Note that Modelon Impact will restart during step 6 so assure no users are working in the system. It's also considered best practice to perform a backup of Modelon Impact and the server itself before upgrading Modelon Impact. Customer Managed Modelon Impact releases can be found on our <a href="https://github.com/modelon-community/customer-hosted-modelon-impact/releases/">Github page</a>.</p>
+<div class="codehilite"><pre><span></span><code>1. Backup Modelon Impact
+    /var/impact/modelonimpact.sh backup 
+
+2. Download the new release to the Modelon Impact server 
+
+3. Rename the current directory to a new name for safe-keeping
+     sudo mv /var/impact /var/impact.pre-2024-07-20
+
+4. create the /var/impact directory again 
+     sudo mkdir /var/impact 
+
+5. unpack the new release 
+     sudo tar zxfv ./customer-hosted-modelon-impact-v1.15.5.tar.gz -C /var/impact
+
+6. execute the install command, to update your Modelon Impact installation
+     /var/impact/modelonimpact.sh install
+</code></pre></div>
+
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>In step 6, should you need a reminder of the configuration options you used earlier, then look them up in <code>/etc/impact/config</code></p>
+</div>
 <h2 id="log-management-and-troubleshooting">Log Management and Troubleshooting<a class="headerlink" href="#log-management-and-troubleshooting" title="Permanent link">&#128279;</a></h2>
 <p>To collect logs and statistics for troubleshooting, please run the command:</p>
 <div class="codehilite"><pre><span></span><code>$<span class="w"> </span>/var/impact/modelonimpact.sh<span class="w"> </span>analyze

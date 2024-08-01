@@ -314,6 +314,25 @@
   
   
     <li class="md-nav__item">
+      <a href="proxy.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Outbound Proxies
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
       <a href="modelonimpactscript.html" class="md-nav__link">
         
   
@@ -575,13 +594,13 @@ Enter<span class="w"> </span>the<span class="w"> </span>desired<span class="w"> 
 </code></pre></div>
 
 <p>The next configurable option is the backup directory:</p>
-<div class="codehilite"><pre><span></span><code>Please enter the path for backups
-(Press enter for /var/impactbackups):
+<div class="codehilite"><pre><span></span><code>Please<span class="w"> </span>enter<span class="w"> </span>the<span class="w"> </span>path<span class="w"> </span><span class="k">for</span><span class="w"> </span>backups
+<span class="o">(</span>Press<span class="w"> </span>enter<span class="w"> </span><span class="k">for</span><span class="w"> </span>/var/impactbackups<span class="o">)</span>:
 
- * Backup path set to: /var/impactbackups
+<span class="w"> </span>*<span class="w"> </span>Backup<span class="w"> </span>path<span class="w"> </span><span class="nb">set</span><span class="w"> </span>to:<span class="w"> </span>/var/impactbackups
 </code></pre></div>
 
-<p>Finally, you will be asked to enter the Modelon Impact Productivity Level. This decides how much processing power a user can utilize and is decided by the license you have purchased.</p>
+<p>You will be asked to enter the Modelon Impact Productivity Level. This decides how much processing power a user can utilize and is decided by the license you have purchased.</p>
 <p>The accepted values for Productivity Level are 1, 4 and 16, which corresponds to the Modelon Impact Productivity Levels:</p>
 <table>
 <thead>
@@ -613,6 +632,25 @@ Enter<span class="w"> </span>the<span class="w"> </span>desired<span class="w"> 
 <span class="o">(</span>Press<span class="w"> </span>enter<span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="m">1</span><span class="o">)</span>:<span class="w"> </span><span class="m">4</span>
 
 <span class="w"> </span>*<span class="w"> </span>Number<span class="w"> </span>of<span class="w"> </span>Modelon<span class="w"> </span>Impact<span class="w"> </span>workers<span class="w"> </span><span class="nb">set</span><span class="w"> </span>to:<span class="w"> </span><span class="m">4</span>
+</code></pre></div>
+
+<p>You will be asked for the quota space per user for workspace sharing functionality.</p>
+<div class="codehilite"><pre><span></span><code>Enter<span class="w"> </span>user<span class="w"> </span>storage<span class="w"> </span>quota<span class="w"> </span><span class="k">for</span><span class="w"> </span>sharing<span class="w"> </span>workspaces<span class="w"> </span><span class="o">(</span><span class="k">in</span><span class="w"> </span>gigabytes<span class="o">)</span><span class="w"> </span><span class="o">(</span>Press<span class="w"> </span>enter<span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="m">10</span><span class="o">)</span>:
+
+<span class="w">  </span>*<span class="w"> </span>User<span class="w"> </span>storage<span class="w"> </span>quota<span class="w"> </span><span class="k">for</span><span class="w"> </span>sharing<span class="w"> </span>workspaces<span class="w"> </span><span class="nb">set</span><span class="w"> </span>to:
+</code></pre></div>
+
+<p>Finally, and optionally, if you wish to use an outbound proxy for internet traffic, This covers both http and https.</p>
+<div class="codehilite"><pre><span></span><code><span class="w"> </span>*<span class="w"> </span>If<span class="w"> </span>you<span class="w"> </span>are<span class="w"> </span>wishing<span class="w"> </span>to<span class="w"> </span>use<span class="w"> </span>an<span class="w"> </span>outbound<span class="w"> </span>Proxy<span class="w"> </span><span class="k">for</span><span class="w"> </span>traffic<span class="w"> </span>to<span class="w"> </span>the<span class="w"> </span>internet.
+<span class="w"> </span>*<span class="w"> </span>Please<span class="w"> </span>enter<span class="w"> </span>values<span class="w"> </span><span class="k">for</span><span class="w"> </span>the<span class="w"> </span>following<span class="w"> </span><span class="m">2</span><span class="w"> </span>options,<span class="w"> </span>e.g.<span class="w"> </span>a<span class="w"> </span>URL<span class="w"> </span><span class="s1">&#39;http://proxy.example.com:3128/&#39;</span>,<span class="w"> </span><span class="k">if</span><span class="w"> </span>not<span class="w"> </span>please<span class="w"> </span>leave<span class="w"> </span>blank.
+</code></pre></div>
+
+<p>For the HTTP entry.</p>
+<div class="codehilite"><pre><span></span><code><span class="w"> </span>Enter<span class="w"> </span>the<span class="w"> </span>URL<span class="w"> </span>to<span class="w"> </span>your<span class="w"> </span>proxy<span class="w"> </span><span class="k">for</span><span class="w"> </span>outbound<span class="w"> </span>HTTP<span class="w"> </span>traffic.
+</code></pre></div>
+
+<p>For the HTTPS entry.</p>
+<div class="codehilite"><pre><span></span><code><span class="w"> </span>Enter<span class="w"> </span>the<span class="w"> </span>URL<span class="w"> </span>to<span class="w"> </span>your<span class="w"> </span>proxy<span class="w"> </span><span class="k">for</span><span class="w"> </span>outbound<span class="w"> </span>HTTPS<span class="w"> </span>traffic.
 </code></pre></div>
 
 <p>The configuration will now be saved. All your configuration settings can be found in the file <code>/etc/impact/config</code>.</p>

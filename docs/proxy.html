@@ -13,10 +13,10 @@
       
       
       
-        <link rel="prev" href="proxy.html">
+        <link rel="prev" href="firewall.html">
       
       
-        <link rel="next" href="install.html">
+        <link rel="next" href="modelonimpactscript.html">
       
       
       <link rel="icon" href="assets/modelonimpact_icon.ico">
@@ -24,7 +24,7 @@
     
     
       
-        <title>The modelonimpact.sh script - Customer Hosted Modelon Impact - Installation and Administration Guide🔗</title>
+        <title>Outbound Proxies - Customer Hosted Modelon Impact - Installation and Administration Guide🔗</title>
       
     
     
@@ -75,7 +75,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#the-modelonimpactsh-script" class="md-skip">
+        <a href="#outbound-proxy" class="md-skip">
           Skip to content
         </a>
       
@@ -110,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              The modelonimpact.sh script
+              Outbound Proxies
             
           </span>
         </div>
@@ -312,25 +312,6 @@
       
   
   
-  
-    <li class="md-nav__item">
-      <a href="proxy.html" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Outbound Proxies
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-    
-      
-      
-  
-  
     
   
   
@@ -342,7 +323,64 @@
         
       
       
-      <a href="modelonimpactscript.html" class="md-nav__link md-nav__link--active">
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Outbound Proxies
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="proxy.html" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Outbound Proxies
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#no-proxy-configuration" class="md-nav__link">
+    No Proxy configuration
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="modelonimpactscript.html" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -351,7 +389,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -433,6 +470,21 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#no-proxy-configuration" class="md-nav__link">
+    No Proxy configuration
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -446,35 +498,10 @@
                   
 
 
-<h1 id="the-modelonimpactsh-script">The <em>modelonimpact.sh</em> Script<a class="headerlink" href="#the-modelonimpactsh-script" title="Permanent link">&#128279;</a></h1>
-<p>Throughout this document, you will see a lot of references to the script <code>modelonimpact.sh</code>.</p>
-<p>This administration script will install Modelon Impact, help you do capacity planning, and it provides several administrative tasks such as starting and stopping the service, handling backup/restore, and collecting logs for troubleshooting.</p>
-<p>The script can be run as root, or as a regular user with sudo-rights, where we recommend the latter.</p>
-<p>Whenever you run the script, it will show some essential statistics and it will tell you if the Modelon Impact service is running or not:</p>
-<div class="codehilite"><pre><span></span><code>$<span class="w"> </span>/var/impact/modelonimpact.sh
-<span class="w"> </span>__<span class="w">  </span>__<span class="w">           </span>_<span class="w">      </span>_<span class="w">               </span>___<span class="w">                            </span>_<span class="w">   </span>
-<span class="p">|</span><span class="w">  </span><span class="se">\/</span><span class="w">  </span><span class="p">|</span><span class="w"> </span>___<span class="w">   </span>__<span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>___<span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>___<span class="w">  </span>_<span class="w"> </span>__<span class="w">   </span><span class="p">|</span>_<span class="w"> </span>_<span class="p">|</span>_<span class="w"> </span>__<span class="w"> </span>___<span class="w">  </span>_<span class="w"> </span>__<span class="w">   </span>__<span class="w"> </span>_<span class="w">  </span>___<span class="p">|</span><span class="w"> </span><span class="p">|</span>_<span class="w"> </span>
-<span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="se">\/</span><span class="p">|</span><span class="w"> </span><span class="p">|</span>/<span class="w"> </span>_<span class="w"> </span><span class="se">\ </span>/<span class="w"> </span>_<span class="sb">`</span><span class="w"> </span><span class="p">|</span>/<span class="w"> </span>_<span class="w"> </span><span class="se">\ </span><span class="p">|</span>/<span class="w"> </span>_<span class="w"> </span><span class="se">\|</span><span class="w"> </span><span class="s1">&#39;_ \   | || &#39;</span>_<span class="w"> </span><span class="sb">`</span><span class="w"> </span>_<span class="w"> </span><span class="se">\|</span><span class="w"> </span><span class="err">&#39;</span>_<span class="w"> </span><span class="se">\ </span>/<span class="w"> </span>_<span class="sb">`</span><span class="w"> </span><span class="p">|</span>/<span class="w"> </span>__<span class="p">|</span><span class="w"> </span>__<span class="p">|</span>
-<span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w">  </span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="o">(</span>_<span class="o">)</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="o">(</span>_<span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w">  </span>__/<span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="o">(</span>_<span class="o">)</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w">  </span><span class="p">|</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="p">|</span>_<span class="o">)</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="o">(</span>_<span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="o">(</span>__<span class="p">|</span><span class="w"> </span><span class="p">|</span>_<span class="w"> </span>
-<span class="p">|</span>_<span class="p">|</span><span class="w">  </span><span class="p">|</span>_<span class="p">|</span><span class="se">\_</span>__/<span class="w"> </span><span class="se">\_</span>_,_<span class="p">|</span><span class="se">\_</span>__<span class="p">|</span>_<span class="p">|</span><span class="se">\_</span>__/<span class="p">|</span>_<span class="p">|</span><span class="w"> </span><span class="p">|</span>_<span class="p">|</span><span class="w"> </span><span class="p">|</span>___<span class="p">|</span>_<span class="p">|</span><span class="w"> </span><span class="p">|</span>_<span class="p">|</span><span class="w"> </span><span class="p">|</span>_<span class="p">|</span><span class="w"> </span>.__/<span class="w"> </span><span class="se">\_</span>_,_<span class="p">|</span><span class="se">\_</span>__<span class="p">|</span><span class="se">\_</span>_<span class="p">|</span>
-<span class="w">                                                      </span><span class="p">|</span>_<span class="p">|</span>
-<span class="w">               </span>Accurate<span class="w"> </span>Simulations.<span class="w"> </span>Better<span class="w"> </span>Decisions.
-
-Please<span class="w"> </span>enter<span class="w"> </span>the<span class="w"> </span>password<span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="s2">&quot;user&quot;</span><span class="w"> </span>to<span class="w"> </span>run<span class="w"> </span>with<span class="w"> </span>elevated<span class="w"> </span>access<span class="w"> </span>rights,<span class="w"> </span><span class="k">if</span><span class="w"> </span>asked<span class="w"> </span><span class="k">for</span><span class="w"> </span>it.
-
-Ubuntu<span class="w"> </span>Release:<span class="w"> </span><span class="m">22</span>.04<span class="w">                   </span>RAM<span class="w"> </span>Tot<span class="w"> </span>/<span class="w"> </span>Avail:<span class="w"> </span><span class="m">32</span>.43<span class="w"> </span>GB<span class="w"> </span>/<span class="w"> </span><span class="m">28</span>.19<span class="w"> </span>GB
-Disk<span class="w"> </span>size<span class="w"> </span>/var:<span class="w"> </span>468G<span class="w">                    </span>Load<span class="w"> </span>Average:<span class="w"> </span><span class="m">0</span>.43<span class="w"> </span><span class="m">0</span>.19<span class="w"> </span><span class="m">0</span>.17
-Available<span class="w"> </span>space<span class="w"> </span>on<span class="w"> </span>/var:<span class="w"> </span>400G<span class="w">           </span>
-
-Modelon<span class="w"> </span>Impact<span class="w"> </span>is<span class="w"> </span>running<span class="w"> </span>on:<span class="w"> </span>https://modelon-impact.mycompany.com
-Keycloak<span class="w"> </span>IAM<span class="w"> </span>is<span class="w"> </span>running<span class="w"> </span>on:<span class="w">   </span>https://modelon-impact.mycompany.com/iam/auth/admin
-</code></pre></div>
-
-<p>To see which options are available, run the script with the <code>help</code> option:</p>
-<div class="codehilite"><pre><span></span><code>$<span class="w"> </span>/var/impact/modelonimpact.sh<span class="w"> </span><span class="nb">help</span>
-</code></pre></div>
-
-<p>The options will be described in detail in this guide.</p>
+<h1 id="outbound-proxy">Outbound Proxy<a class="headerlink" href="#outbound-proxy" title="Permanent link">&#128279;</a></h1>
+<p>As part of the install of Customer Hosted Modelon Impact, the install will add the supported values to the daemon.json file under <code>/etc/docker</code>, this service will be restarted as part of the install.</p>
+<h2 id="no-proxy-configuration">No Proxy configuration<a class="headerlink" href="#no-proxy-configuration" title="Permanent link">&#128279;</a></h2>
+<p>Within the config.default file, we include a number of sensible defaults that should be excluded from proxying. If this comma separated list does not meet your needs, please consider adding additional values as required.</p>
 
 
 
