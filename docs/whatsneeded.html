@@ -613,6 +613,8 @@
 <h2 id="a-tls-transport-layer-security-certificate">A TLS (Transport Layer Security) Certificate<a class="headerlink" href="#a-tls-transport-layer-security-certificate" title="Permanent link">&#128279;</a></h2>
 <p>Modelon Impact exposes its services using HTTPS. Unencrypted HTTP is not available. A TLS certificate for your domain, or the servers host name is required to ensure a secure connection to your Modelon Impact instance. It’s your responsibility to acquire a certificate in advance of the installation. Your server’s hostname must match the name (Issuer and/or SAN) of your certificate.</p>
 <p>Use of private Certificate Authority (CA) or self-signed certificates will give a security warning in your browser if you access the service on the local server.</p>
+<p>Self-signed certificates are not supported with the Modelon Impact Python client. </p>
+<p>Please use a trusted Certificate Authority provider when purchasing a valid certificate for Modelon Impact. </p>
 <h2 id="access-to-the-modelon-container-registry">Access to the Modelon Container Registry<a class="headerlink" href="#access-to-the-modelon-container-registry" title="Permanent link">&#128279;</a></h2>
 <p>When purchasing Modelon Impact, you will receive a username and password to the container registry where the installer downloads the software. The installer will ask you for these credentials.</p>
 <h2 id="a-dns-domain-name-system-service">A DNS (Domain Name System) Service<a class="headerlink" href="#a-dns-domain-name-system-service" title="Permanent link">&#128279;</a></h2>
@@ -620,6 +622,10 @@
 <h2 id="code-versioning-system-optional">Code Versioning System (Optional)<a class="headerlink" href="#code-versioning-system-optional" title="Permanent link">&#128279;</a></h2>
 <p>Modelon Impact supports saving user data to a Git or Subversion server. This is used for sharing data between users and for more frequent backups than what is offered by the server backup.</p>
 <p>Modelon Impact does not provide a code versioning system, instead it lets you configure a connection to an existing Git or Subversion server in your organization.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Code Versioning System with self-signed certificates is not supported.</p>
+</div>
 
 
 
