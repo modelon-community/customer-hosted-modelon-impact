@@ -489,6 +489,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#question-wheres-my-user-data-stored-on-the-server" class="md-nav__link">
+    Question: Where's my user data stored on the server?
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -579,6 +586,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#question-wheres-my-user-data-stored-on-the-server" class="md-nav__link">
+    Question: Where's my user data stored on the server?
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -604,13 +618,15 @@
 <h4 id="question-can-i-select-different-modelon-impact-productivity-profiles-for-my-users"><strong>Question</strong>: Can I select different Modelon Impact productivity profiles for my users?<a class="headerlink" href="#question-can-i-select-different-modelon-impact-productivity-profiles-for-my-users" title="Permanent link">&#128279;</a></h4>
 <p><strong>Answer</strong>: No, there is a single profile that applies to all users.</p>
 <h4 id="question-how-do-i-configure-single-sign-on-sso-or-multi-factor-authentication-mfa-on-my-instance-of-modelon-impact"><strong>Question</strong>: How do I configure Single Sign-On (SSO) or Multi-Factor Authentication (MFA) on my instance of Modelon Impact?<a class="headerlink" href="#question-how-do-i-configure-single-sign-on-sso-or-multi-factor-authentication-mfa-on-my-instance-of-modelon-impact" title="Permanent link">&#128279;</a></h4>
-<p><strong>Answer</strong>: SSO and MFA is supported in Modelon Impact. It is possible to configure this in the Identity and Access Management (IAM) tooling provided in the software. Modelon Impact can offer SSO integration using the OpenID Connect framework. Please contact support@modelon.com to find the best solution for your environment.</p>
+<p><strong>Answer</strong>: SSO and MFA is supported in Modelon Impact. It is possible to configure this in the Identity and Access Management (IAM) tooling provided in the software. Modelon Impact can offer SSO integration using the OpenID Connect framework. Please contact <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#64;&#109;&#111;&#100;&#101;&#108;&#111;&#110;&#46;&#99;&#111;&#109;">&#115;&#117;&#112;&#112;&#111;&#114;&#116;&#64;&#109;&#111;&#100;&#101;&#108;&#111;&#110;&#46;&#99;&#111;&#109;</a> to find the best solution for your environment.</p>
 <h4 id="question-can-i-scale-my-instance-of-modelon-impact-over-several-servers"><strong>Question</strong>: Can I scale my instance of Modelon Impact over several servers?<a class="headerlink" href="#question-can-i-scale-my-instance-of-modelon-impact-over-several-servers" title="Permanent link">&#128279;</a></h4>
 <p><strong>Answer</strong>: No, the Customer Hosted Modelon Impact is designed to run on a single server.</p>
 <h4 id="question-is-it-possible-to-run-modelon-impact-on-a-different-linux-distribution-than-ubuntu"><strong>Question</strong>: Is it possible to run Modelon Impact on a different Linux distribution than Ubuntu?<a class="headerlink" href="#question-is-it-possible-to-run-modelon-impact-on-a-different-linux-distribution-than-ubuntu" title="Permanent link">&#128279;</a></h4>
 <p><strong>Answer</strong>: Customer Hosted Modelon Impact requires Ubuntu. This may change in the future.</p>
 <h4 id="question-i-already-have-my-own-kubernetes-or-docker-setup-can-i-run-modelon-impact-in-my-existing-infrastructure"><strong>Question</strong>: I already have my own Kubernetes or Docker setup. Can I run Modelon Impact in my existing infrastructure?<a class="headerlink" href="#question-i-already-have-my-own-kubernetes-or-docker-setup-can-i-run-modelon-impact-in-my-existing-infrastructure" title="Permanent link">&#128279;</a></h4>
 <p><strong>Answer</strong>: Customer Hosted Modelon Impact runs as a pre-packaged stand-alone service. While it may technically be possible to run Modelon Impact in other ways, Modelon can’t support these types of environments.</p>
+<h4 id="question-wheres-my-user-data-stored-on-the-server"><strong>Question</strong>: Where's my user data stored on the server?<a class="headerlink" href="#question-wheres-my-user-data-stored-on-the-server" title="Permanent link">&#128279;</a></h4>
+<p><strong>Answer</strong>: All user disks are in a Docker volume named <code>conf_k3s-data</code>. To find the location of an individual user disk, use the instructions for <a href="systemadministration.html#managing-individual-user-disks">managing individual user disk</a>.</p>
 
 
 
@@ -638,7 +654,7 @@
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Copyright &copy; 2023 Modelon
+      Copyright &copy; 2025 Modelon
     </div>
   
   
