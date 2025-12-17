@@ -603,7 +603,7 @@
 <h2 id="a-linux-server">A Linux Server<a class="headerlink" href="#a-linux-server" title="Permanent link">&#128279;</a></h2>
 <p>An LTS (Long Term Support) version of Ubuntu, version 22.04 or later, is required. The server should be dedicated to running Modelon Impact. Modelon Impact will run on Ubuntu 22.04 minimal server and minimal desktop. IPv4 based networking is required.</p>
 <p>You are expected to have a sufficiently deep knowledge of Linux system administration to handle installation of the operating system, troubleshooting, partitioning of disks, performing backups, and general maintenance.</p>
-<p>The installation procedure will only install OS software packages that are required to run Modelon Impact and will not interfere with choices you may want to make for your own server environment. You should consider installing the Secure Shell Daemon (SSHD) for remote access, Network Time Protocol (NTP) for timekeeping, backup agents and other sysadmin tools needed within your organization. </p>
+<p>The installation procedure will only install OS software packages that are required to run Modelon Impact and will not interfere with choices you may want to make for your own server environment. You should consider installing the Secure Shell Daemon (SSHD) for remote access, Network Time Protocol (NTP) for timekeeping, backup agents and other sysadmin tools needed within your organization.</p>
 <p>Security hardening of the operating system is left up to you and the requirements of your organization.</p>
 <p>Specific to Modelon Impact is administration of Docker and Kubernetes. Prior knowledge of Docker and Kubernetes is beneficial, but not required to install or manage Modelon Impact.</p>
 <h2 id="an-internet-connection">An Internet Connection<a class="headerlink" href="#an-internet-connection" title="Permanent link">&#128279;</a></h2>
@@ -611,10 +611,13 @@
 <h2 id="a-valid-modelon-impact-license">A Valid Modelon Impact License<a class="headerlink" href="#a-valid-modelon-impact-license" title="Permanent link">&#128279;</a></h2>
 <p>You will receive a license file, <code>license.yaml</code>, when you purchase or evaluate Modelon Impact.</p>
 <h2 id="a-tls-transport-layer-security-certificate">A TLS (Transport Layer Security) Certificate<a class="headerlink" href="#a-tls-transport-layer-security-certificate" title="Permanent link">&#128279;</a></h2>
-<p>Modelon Impact exposes its services using HTTPS. Unencrypted HTTP is not available. A TLS certificate for your domain, or the servers host name is required to ensure a secure connection to your Modelon Impact instance. It’s your responsibility to acquire a certificate in advance of the installation. Your server’s hostname must match the name (Issuer and/or SAN) of your certificate.</p>
+<p>Modelon Impact exposes its services using HTTPS. Unencrypted HTTP is not available. A TLS certificate for your domain, or the the host name of the server is required to ensure a secure connection to your Modelon Impact instance. It’s your responsibility to acquire a certificate (in PEM format) in advance of the installation. Your server’s hostname must match the name (Issuer and/or SAN) of your certificate.</p>
 <p>Use of private Certificate Authority (CA) or self-signed certificates will give a security warning in your browser if you access the service on the local server.</p>
-<p>Self-signed certificates are not supported with the Modelon Impact Python client. </p>
-<p>Please use a trusted Certificate Authority provider when purchasing a valid certificate for Modelon Impact. </p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Self-signed certificates are not supported with the Modelon Impact Python client.</p>
+</div>
+<p>Please use a trusted Certificate Authority provider when purchasing a valid certificate for Modelon Impact.</p>
 <h2 id="access-to-the-modelon-container-registry">Access to the Modelon Container Registry<a class="headerlink" href="#access-to-the-modelon-container-registry" title="Permanent link">&#128279;</a></h2>
 <p>When purchasing Modelon Impact, you will receive a username and password to the container registry where the installer downloads the software. The installer will ask you for these credentials.</p>
 <h2 id="a-dns-domain-name-system-service">A DNS (Domain Name System) Service<a class="headerlink" href="#a-dns-domain-name-system-service" title="Permanent link">&#128279;</a></h2>
@@ -653,7 +656,7 @@
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Copyright &copy; 2023 Modelon
+      Copyright &copy; 2025 Modelon
     </div>
   
   

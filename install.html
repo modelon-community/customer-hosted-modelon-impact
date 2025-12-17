@@ -454,7 +454,7 @@ $<span class="w"> </span>sudo<span class="w"> </span>apt-get<span class="w"> </s
 </code></pre></div>
 
 <h1 id="download-modelon-impact">Download Modelon Impact<a class="headerlink" href="#download-modelon-impact" title="Permanent link">&#128279;</a></h1>
-<p>You will find all released versions on of Modelon Impact on our <a href="https://github.com/modelon-community/customer-hosted-modelon-impact/releases">Github page</a>. Download the desired version to your home directory on Linux. Then, unpack the archive file (replacing RELEASE with the actual file name) to <code>/var/impact</code>.</p>
+<p>You will find all released versions on of Modelon Impact on our <a href="https://github.com/modelon-community/customer-hosted-modelon-impact/releases">Github page</a>. Download the desired version to your home directory on Linux. Then, unpack the archive file (replacing <code>RELEASE</code> with the actual file name) to <code>/var/impact</code>.</p>
 <div class="codehilite"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>mkdir<span class="w"> </span>/var/impact
 $<span class="w"> </span>sudo<span class="w"> </span>tar<span class="w"> </span>zxfv<span class="w"> </span>RELEASE.tar.gz<span class="w"> </span>-C<span class="w"> </span>/var/impact
 </code></pre></div>
@@ -524,7 +524,7 @@ Alternatively,<span class="w"> </span>you<span class="w"> </span>can<span class=
 <li>
 <p><strong>TLS Certificate</strong>:</p>
 <p>Copy your certificate files to the folder <code>/etc/impact/certs</code>.
-Name the files <code>tls.crt</code> and <code>tls.key</code>. Both files must be in PEM format, and the key must be an RSA key. The <code>tls.crt</code> file must contain the server certificate and any intermediate certificates, all concatenated together into one file. The certificate is provided by you.</p>
+Name the two files <code>tls.crt</code> and <code>tls.key</code>. Both files must be in PEM format. The private key file must be unencrypted and contain an RSA key. The <code>tls.crt</code> file must contain the server certificate and any intermediate certificates, all concatenated together into one file. The certificate is provided by you.</p>
 </li>
 </ul>
 <h2 id="install-modelon-impact_1">Install Modelon Impact<a class="headerlink" href="#install-modelon-impact_1" title="Permanent link">&#128279;</a></h2>
@@ -568,7 +568,7 @@ Please<span class="w"> </span>enter<span class="w"> </span>the<span class="w"> <
 </code></pre></div>
 
 <p>The installer needs to know which network interface you're binding to. The default is 0.0.0.0, which will allow access to Modelon Impact over the network.</p>
-<p>If you choose 127.0.0.1 (localhost), Modelon Impact will only be running locally on your server and will not be accessible from the rest of your network.</p>
+<p>If you choose <code>127.0.0.1</code> (<code>localhost</code>), Modelon Impact will only be running locally on your server and will not be accessible from the rest of your network.</p>
 <p>If you require Modelon Impact to bind to a specific network interface, you can even write its IP address here.</p>
 <div class="codehilite"><pre><span></span><code>Enter<span class="w"> </span>the<span class="w"> </span>IP<span class="w"> </span>you<span class="w"> </span>want<span class="w"> </span>Modelon<span class="w"> </span>Impact<span class="w"> </span>to<span class="w"> </span><span class="nb">bind</span><span class="w"> </span>to.
 These<span class="w"> </span>are<span class="w"> </span>the<span class="w"> </span>configured<span class="w"> </span>interfaces<span class="w"> </span>on<span class="w"> </span>your<span class="w"> </span>server:
@@ -581,7 +581,7 @@ These<span class="w"> </span>are<span class="w"> </span>the<span class="w"> </sp
 <span class="w"> </span>*<span class="w"> </span>IP<span class="w"> </span><span class="nb">set</span><span class="w"> </span>to:<span class="w"> </span><span class="m">0</span>.0.0.0
 </code></pre></div>
 
-<p>The next step is to set the administrative username and password for the authentication service, Keycloak. If no prior password is set in the config file, you will be suggested a random password. </p>
+<p>The next step is to set the administrative username and password for the authentication service, Keycloak. If no prior password is set in the config file, you will be suggested a random password.</p>
 <div class="codehilite"><pre><span></span><code>Enter<span class="w"> </span>the<span class="w"> </span>desired<span class="w"> </span>username<span class="w"> </span><span class="k">for</span><span class="w"> </span>the<span class="w"> </span>IAM<span class="w"> </span>admin<span class="w"> </span>user.
 <span class="o">(</span>Press<span class="w"> </span>enter<span class="w"> </span><span class="k">for</span><span class="w"> </span>admin<span class="o">)</span>:
 
@@ -672,11 +672,11 @@ Write<span class="w"> </span>YES<span class="w"> </span>to<span class="w"> </spa
 <div class="codehilite"><pre><span></span><code>$<span class="w"> </span>/var/impact/modelonimpact.sh<span class="w"> </span>config
 </code></pre></div>
 
-<p>When you are satisfied with the configuration, run the installer again. </p>
+<p>When you are satisfied with the configuration, run the installer again.</p>
 <div class="codehilite"><pre><span></span><code>$<span class="w"> </span>/var/impact/modelonimpact.sh<span class="w"> </span>install
 </code></pre></div>
 
-<p>Whether you decided to exit the installer or not, you will now be asked if you want to install Modelon Impact. </p>
+<p>Whether you decided to exit the installer or not, you will now be asked if you want to install Modelon Impact.</p>
 <div class="codehilite"><pre><span></span><code>You<span class="w"> </span>are<span class="w"> </span>now<span class="w"> </span>ready<span class="w"> </span>to<span class="w"> </span>install<span class="w"> </span>Modelon<span class="w"> </span>Impact
 
 If<span class="w"> </span>you<span class="w"> </span>want<span class="w"> </span>to<span class="w"> </span>change<span class="w"> </span>any<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>configuration<span class="w"> </span>options,<span class="w"> </span><span class="nb">exit</span><span class="w"> </span>the<span class="w"> </span>installer<span class="w"> </span>and<span class="w"> </span>run<span class="w"> </span><span class="s1">&#39;modelonimpact.sh config&#39;</span>.
@@ -685,7 +685,7 @@ When<span class="w"> </span>reconfigured,<span class="w"> </span>run<span class=
 Write<span class="w"> </span>YES<span class="w"> </span>to<span class="w"> </span>install<span class="w"> </span>Modelon<span class="w"> </span>Impact,<span class="w"> </span>or<span class="w"> </span>press<span class="w"> </span>ENTER<span class="w"> </span>to<span class="w"> </span>exit:<span class="w"> </span>YES
 </code></pre></div>
 
-<p>The installer will set up your Modelon Impact environment, this can take up to 30 minutes, depending on your Internet bandwidth and server performance. A successful installation ends like this:</p>
+<p>The installer will set up your Modelon Impact environment, this can take up to one hour, depending on your Internet bandwidth and server performance. A successful installation ends like this:</p>
 <div class="codehilite"><pre><span></span><code>...
 conf-provisioning-1<span class="w">  </span><span class="p">|</span><span class="w"> </span>NAME:<span class="w"> </span>impact
 conf-provisioning-1<span class="w">  </span><span class="p">|</span><span class="w"> </span>LAST<span class="w"> </span>DEPLOYED:<span class="w"> </span>Mon<span class="w"> </span>Oct<span class="w"> </span><span class="m">23</span><span class="w"> </span><span class="m">09</span>:16:57<span class="w"> </span><span class="m">2023</span>
@@ -759,14 +759,14 @@ Then,<span class="w"> </span>open<span class="w"> </span>up<span class="w"> </sp
 </tr>
 <tr>
 <td>4</td>
-<td>If you have purchased Impact Pro features, add the impact-pro role to all your users. <br><br> <img alt="IAM Role" src="assets/IAM-roles.png" /></td>
+<td>If you have purchased Impact Pro features, add the <em>impact-pro</em> role to all your users. <br><br> <img alt="IAM Role" src="assets/IAM-roles.png" /></td>
 </tr>
 </tbody>
 </table>
 <p>You are now ready to launch Modelon Impact by visiting the Modelon Impact front page and logging on using the account you just created in Keycloak IAM.</p>
 <p>For further guidance, please refer to our <a href="https://help.modelon.com/">help center</a>.</p>
 <h2 id="enable-windows-fmu-exports">Enable Windows FMU exports<a class="headerlink" href="#enable-windows-fmu-exports" title="Permanent link">&#128279;</a></h2>
-<p>Modelon Impact supports exporting of Windows FMU, via cross-compilation. Because of licensing requirements, you need to download Microsoft libraries separately using command: </p>
+<p>Modelon Impact supports exporting of Windows FMU, via cross-compilation. Because of licensing requirements, you need to download Microsoft libraries separately using command:</p>
 <div class="codehilite"><pre><span></span><code>$<span class="w"> </span>/var/impact/modelonimpact.sh<span class="w"> </span>add-cross-compilation-support
 </code></pre></div>
 
@@ -798,7 +798,7 @@ Then,<span class="w"> </span>open<span class="w"> </span>up<span class="w"> </sp
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Copyright &copy; 2023 Modelon
+      Copyright &copy; 2025 Modelon
     </div>
   
   

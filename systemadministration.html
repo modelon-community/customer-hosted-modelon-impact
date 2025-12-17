@@ -501,8 +501,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#show-running-docker-pods" class="md-nav__link">
-    Show Running Docker Pods
+  <a href="#show-running-containers" class="md-nav__link">
+    Show Running Containers
   </a>
   
 </li>
@@ -652,8 +652,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#show-running-docker-pods" class="md-nav__link">
-    Show Running Docker Pods
+  <a href="#show-running-containers" class="md-nav__link">
+    Show Running Containers
   </a>
   
 </li>
@@ -742,6 +742,11 @@ Starting<span class="w"> </span>Modelon<span class="w"> </span>Impact:
 
 <p>This will result in a few minutes of service interruption; you may want to plan the operation in advance.</p>
 <p>If there is a new valid certificate in <code>/etc/impact/certs</code>, you will be asked if you really want to replace the certificate. Answer <strong>“YES”</strong> to this question, and the update will be performed:</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>To silently accept the configuration change, use the argument <code>--yes</code>.</p>
+<p><code>$ /var/impact/modelonimpact.sh tls --yes</code></p>
+</div>
 <div class="codehilite"><pre><span></span><code>$<span class="w"> </span>/var/impact/modelonimpact.sh<span class="w"> </span>tls
 <span class="w"> </span>__<span class="w">  </span>__<span class="w">           </span>_<span class="w">      </span>_<span class="w">               </span>___<span class="w">                            </span>_<span class="w">   </span>
 <span class="p">|</span><span class="w">  </span><span class="se">\/</span><span class="w">  </span><span class="p">|</span><span class="w"> </span>___<span class="w">   </span>__<span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>___<span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>___<span class="w">  </span>_<span class="w"> </span>__<span class="w">   </span><span class="p">|</span>_<span class="w"> </span>_<span class="p">|</span>_<span class="w"> </span>__<span class="w"> </span>___<span class="w">  </span>_<span class="w"> </span>__<span class="w">   </span>__<span class="w"> </span>_<span class="w">  </span>___<span class="p">|</span><span class="w"> </span><span class="p">|</span>_<span class="w"> </span>
@@ -772,7 +777,7 @@ secret/impact-ssl-certificate<span class="w"> </span>created
 </code></pre></div>
 
 <h2 id="renew-the-k3s-certificate">Renew the K3s Certificate<a class="headerlink" href="#renew-the-k3s-certificate" title="Permanent link">&#128279;</a></h2>
-<p>K3s, that Modelon Impact runs on, creates it own internal certificate which is needed for communicating with the cluster. The certificate is valid for twelve months. If the expiration date is less than ninety days away, a new certificate will be created when you restart Modelon Impact. </p>
+<p>K3s, that Modelon Impact runs on, creates it own internal certificate which is needed for communicating with the cluster. The certificate is valid for twelve months. If the expiration date is less than ninety days away, a new certificate will be created when you restart Modelon Impact.</p>
 <p>The script <code>/var/impact/modelonimpact.sh</code> will show you the expiration date of the certificate, and will give you a reminder to restart Modelon Impact if it expires in less than ninety days.</p>
 <div class="codehilite"><pre><span></span><code>$<span class="w"> </span>/var/impact/modelonimpact.sh
 <span class="w"> </span>__<span class="w">  </span>__<span class="w">           </span>_<span class="w">      </span>_<span class="w">               </span>___<span class="w">                            </span>_
@@ -793,7 +798,7 @@ Avail.<span class="w"> </span>space<span class="w"> </span>on<span class="w"> </
 <p>To restart Modelon Impact, run the commands <code>/var/impact/modelonimpact.sh stop</code> and <code>/var/impact/modelonimpact.sh start</code>. The certificate will then be automatically regenerated.</p>
 <p>Note that Modelon Impact will be unavailable for a few minutes, you may want to plan this operation in advance.</p>
 <h2 id="backup-modelon-impact">Backup Modelon Impact<a class="headerlink" href="#backup-modelon-impact" title="Permanent link">&#128279;</a></h2>
-<p>The backup routine creates a snapshot of the entire Modelon Impact service. </p>
+<p>The backup routine creates a snapshot of the entire Modelon Impact service.</p>
 <p>The backup will temporarily pause the Modelon Impact service until the backup is done. You may want to schedule your backup to a period with less activity. You may want to add the backup as a cron-job on your server.</p>
 <p>The backup will be written to the folder of your choice, this is configured in <code>/etc/impact/config</code>. The default is <code>/var/impactbackups</code>.</p>
 <p>To create a backup, run the following command:</p>
@@ -820,10 +825,10 @@ $<span class="w"> </span>/var/impact/modelonimpact.sh<span class="w"> </span>tls
 <h2 id="managing-individual-user-disks">Managing Individual User Disks<a class="headerlink" href="#managing-individual-user-disks" title="Permanent link">&#128279;</a></h2>
 <p>While users can save their Modelon Impact workspaces on a code version server, taking an OS backup of the entire server is strongly recommended. As this will safeguard your Modelon Impact backups in another location.</p>
 <p>Note also that running <code>/var/impact/modelonimpact.sh backup</code> will not backup the folders <code>/var/impact/</code> and <code>/etc/impact</code>. An OS backup is required to protect these directories.</p>
-<p>All user data can be backed up and restored using the previously described features of <code>modelonimpact.sh</code>. However, using <code>modelonimpact.sh</code> works on the entire Modelon Impact installation, backing up and restoring data for all users in one operation. </p>
+<p>All user data can be backed up and restored using the previously described features of <code>modelonimpact.sh</code>. However, using <code>modelonimpact.sh</code> works on the entire Modelon Impact installation, backing up and restoring data for all users in one operation.</p>
 <p>There is an alternative procedure to manipulate data for individual users.</p>
 <p>To find out the location of your user disk, use the command <code>/var/impact/tools/ls-user-disk.sh &lt;USERNAME&gt;</code>. Inside of the folder output by the command, you will find all your files, including the <code>impact</code> folder that contains all your Modelon Impact related files.</p>
-<p>As an example, this shows how to find the <code>impact</code> folder for the user <code>example.user</code>. </p>
+<p>As an example, this shows how to find the <code>impact</code> folder for the user <code>example.user</code>.</p>
 <div class="codehilite"><pre><span></span><code>$<span class="w"> </span>/var/impact/tools/ls-user-disk.sh<span class="w"> </span>example.user
 /var/lib/docker/volumes/conf_k3s-data/_data/storage/pvc-57fda079-bd17-4e2c-b11c-e4f4986b25d9_impact_claim-example-2euser
 
@@ -845,7 +850,7 @@ customizations<span class="w">  </span>generated_resources<span class="w">  </sp
 </code></pre></div>
 
 <p>The installer will detect that you have a running system and ask you to verify that you want to rebuild your instance of Modelon Impact.</p>
-<p>Your user data and service configuration will be preserved. You are still advised to have a backup at hand in case you need to do a full disaster recovery. </p>
+<p>Your user data and service configuration will be preserved. You are still advised to have a backup at hand in case you need to do a full disaster recovery.</p>
 <div class="codehilite"><pre><span></span><code>You<span class="w"> </span>already<span class="w"> </span>have<span class="w"> </span>a<span class="w"> </span>running<span class="w"> </span>instance<span class="w"> </span>of<span class="w"> </span>Modelon<span class="w"> </span>Impact.
 Running<span class="w"> </span>the<span class="w"> </span>installer<span class="w"> </span>will<span class="w"> </span>rebuild<span class="w"> </span>your<span class="w"> </span>instance<span class="w"> </span>of<span class="w"> </span>Modelon<span class="w"> </span>Impact<span class="w"> </span>using<span class="w"> </span>the<span class="w"> </span>options<span class="w"> </span><span class="k">in</span><span class="w"> </span>/etc/impact/config.
 
@@ -876,7 +881,7 @@ impact-provisioning-1<span class="w"> </span>exited<span class="w"> </span>with<
 
 <p>The rebuild was successful if the last line reads “exited with code 0”</p>
 <p>It’s possible that a failure is caused by unresponsive docker containers, this is usually solved by running the installer once more.</p>
-<p>If it keeps failing, please follow the Disaster Recovery instructions using a backup dating from before the problems started.</p>
+<p>If it keeps failing, please follow the Disaster Recovery instructions below using a backup dating from before the problems started.</p>
 <h2 id="disaster-recovery">Disaster Recovery<a class="headerlink" href="#disaster-recovery" title="Permanent link">&#128279;</a></h2>
 <p>If your server is rendered totally unusable, you can use a known good backup for disaster recovery.</p>
 <p>You can either:</p>
@@ -891,8 +896,8 @@ impact-provisioning-1<span class="w"> </span>exited<span class="w"> </span>with<
 <p>Restore a known good backup.</p>
 </li>
 </ul>
-<p>To install Modelon Impact on a different server, just follow the installation instructions in this manual, then restore your system from the backup. </p>
-<p>In this case, unless you have the original <code>/etc/modelon/config</code> file at hand, it will be recreated during the installation process. </p>
+<p>To install Modelon Impact on a different server, just follow the installation instructions in this manual, then restore your system from the backup.</p>
+<p>In this case, unless you have the original <code>/etc/modelon/config</code> file at hand, it will be recreated during the installation process.</p>
 <p>To uninstall Modelon Impact, run the following command:</p>
 <div class="codehilite"><pre><span></span><code>$<span class="w"> </span>/var/impact/modelonimpact.sh<span class="w"> </span>uninstall
 </code></pre></div>
@@ -904,24 +909,24 @@ impact-provisioning-1<span class="w"> </span>exited<span class="w"> </span>with<
 <p>Uninstalling Modelon Impact will not remove the files in <code>/etc/impact/</code>. Nor will it remove backups which reside in the backup folder set in the config file.</p>
 <p>You can now install Modelon Impact again and restore your backup to get the service up and running, with all configuration settings and user data intact.</p>
 <h2 id="upgrade-modelon-impact">Upgrade Modelon Impact<a class="headerlink" href="#upgrade-modelon-impact" title="Permanent link">&#128279;</a></h2>
-<p>It's possible to upgrade Modelon Impact in-place without losing any information in the system. Assuming you have installed Modelon Impact in the default location, <code>/var/impact</code>, the procedure is as follows. </p>
+<p>It's possible to upgrade Modelon Impact in-place without losing any information in the system. Assuming you have installed Modelon Impact in the default location, <code>/var/impact</code>, the procedure is as follows.</p>
 <p>Note that Modelon Impact will restart during step 6 so assure no users are working in the system. It's also considered best practice to perform a backup of Modelon Impact and the server itself before upgrading Modelon Impact. Customer Managed Modelon Impact releases can be found on our <a href="https://github.com/modelon-community/customer-hosted-modelon-impact/releases/">Github page</a>.</p>
-<div class="codehilite"><pre><span></span><code>1. Backup Modelon Impact
-    /var/impact/modelonimpact.sh backup 
+<div class="codehilite"><pre><span></span><code><span class="m">1</span>.<span class="w"> </span>Backup<span class="w"> </span>Modelon<span class="w"> </span>Impact
+<span class="w">    </span>/var/impact/modelonimpact.sh<span class="w"> </span>backup
 
-2. Download the new release to the Modelon Impact server 
+<span class="m">2</span>.<span class="w"> </span>Download<span class="w"> </span>the<span class="w"> </span>new<span class="w"> </span>release<span class="w"> </span>to<span class="w"> </span>the<span class="w"> </span>Modelon<span class="w"> </span>Impact<span class="w"> </span>server
 
-3. Rename the current directory to a new name for safe-keeping
-     sudo mv /var/impact /var/impact.pre-2024-07-20
+<span class="m">3</span>.<span class="w"> </span>Rename<span class="w"> </span>the<span class="w"> </span>current<span class="w"> </span>directory<span class="w"> </span>to<span class="w"> </span>a<span class="w"> </span>new<span class="w"> </span>name<span class="w"> </span><span class="k">for</span><span class="w"> </span>safe-keeping
+<span class="w">     </span>sudo<span class="w"> </span>mv<span class="w"> </span>/var/impact<span class="w"> </span>/var/impact.pre-2024-07-20
 
-4. create the /var/impact directory again 
-     sudo mkdir /var/impact 
+<span class="m">4</span>.<span class="w"> </span>create<span class="w"> </span>the<span class="w"> </span>/var/impact<span class="w"> </span>directory<span class="w"> </span>again
+<span class="w">     </span>sudo<span class="w"> </span>mkdir<span class="w"> </span>/var/impact
 
-5. unpack the new release 
-     sudo tar zxfv ./customer-hosted-modelon-impact-v1.15.5.tar.gz -C /var/impact
+<span class="m">5</span>.<span class="w"> </span>unpack<span class="w"> </span>the<span class="w"> </span>new<span class="w"> </span>release
+<span class="w">     </span>sudo<span class="w"> </span>tar<span class="w"> </span>zxfv<span class="w"> </span>./customer-hosted-modelon-impact-v1.15.5.tar.gz<span class="w"> </span>-C<span class="w"> </span>/var/impact
 
-6. execute the install command, to update your Modelon Impact installation
-     /var/impact/modelonimpact.sh install
+<span class="m">6</span>.<span class="w"> </span>execute<span class="w"> </span>the<span class="w"> </span>install<span class="w"> </span>command,<span class="w"> </span>to<span class="w"> </span>update<span class="w"> </span>your<span class="w"> </span>Modelon<span class="w"> </span>Impact<span class="w"> </span>installation
+<span class="w">     </span>/var/impact/modelonimpact.sh<span class="w"> </span>install
 </code></pre></div>
 
 <div class="admonition tip">
@@ -941,8 +946,8 @@ impact-provisioning-1<span class="w"> </span>exited<span class="w"> </span>with<
 </code></pre></div>
 
 <p>Note that this is usually not required unless you are asked to run certain commands by the Modelon support engineers.</p>
-<h2 id="show-running-docker-pods">Show Running Docker Pods<a class="headerlink" href="#show-running-docker-pods" title="Permanent link">&#128279;</a></h2>
-<p>The <code>status</code> command to <code>modelonimpact.sh</code> outputs information about the running docker container and all the pods inside of that container. This can be useful for troubleshooting purposes. </p>
+<h2 id="show-running-containers">Show Running Containers<a class="headerlink" href="#show-running-containers" title="Permanent link">&#128279;</a></h2>
+<p>The <code>status</code> command to <code>modelonimpact.sh</code> outputs information about the running docker container and all the pods inside of that container. This can be useful for troubleshooting purposes.</p>
 <div class="codehilite"><pre><span></span><code>$<span class="w"> </span>/var/impact/modelonimpact.sh<span class="w"> </span>status
 <span class="w"> </span>__<span class="w">  </span>__<span class="w">           </span>_<span class="w">      </span>_<span class="w">               </span>___<span class="w">                            </span>_
 <span class="p">|</span><span class="w">  </span><span class="se">\/</span><span class="w">  </span><span class="p">|</span><span class="w"> </span>___<span class="w">   </span>__<span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>___<span class="p">|</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>___<span class="w">  </span>_<span class="w"> </span>__<span class="w">   </span><span class="p">|</span>_<span class="w"> </span>_<span class="p">|</span>_<span class="w"> </span>__<span class="w"> </span>___<span class="w">  </span>_<span class="w"> </span>__<span class="w">   </span>__<span class="w"> </span>_<span class="w">  </span>___<span class="p">|</span><span class="w"> </span><span class="p">|</span>_
@@ -992,11 +997,12 @@ impact-provisioning-1<span class="w"> </span>exited<span class="w"> </span>with<
 <div class="codehilite"><pre><span></span><code>$<span class="w"> </span>/var/impact/modelonimpact.sh<span class="w"> </span>uninstall
 </code></pre></div>
 
-<p>NOTE: This will also remove all user data stored inside of Modelon Impact. Backup data taken using the modelonimpact.sh script is left untouched. Should you want to remove backups as well, do so using:</p>
-<div class="codehilite"><pre><span></span><code>$<span class="w"> </span>sudo<span class="w"> </span>rm<span class="w"> </span>-r<span class="w"> </span>/var/impactbackups
-</code></pre></div>
-
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>This will also remove all user data stored inside of Modelon Impact. Backup data taken using the modelonimpact.sh script is left untouched. Should you want to remove backups as well, do so using:</p>
+<p><code>$ sudo rm -r /var/impactbackups</code></p>
 <p>This is assuming that you are using the default folder for backups.</p>
+</div>
 
 
 
@@ -1024,7 +1030,7 @@ impact-provisioning-1<span class="w"> </span>exited<span class="w"> </span>with<
       <div class="md-copyright">
   
     <div class="md-copyright__highlight">
-      Copyright &copy; 2023 Modelon
+      Copyright &copy; 2025 Modelon
     </div>
   
   
