@@ -466,6 +466,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#change-the-idle-timeout-for-user-servers" class="md-nav__link">
+    Change the Idle Timeout for User Servers
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#fixing-a-corrupt-installation-of-modelon-impact" class="md-nav__link">
     Fixing a Corrupt Installation of Modelon Impact
   </a>
@@ -612,6 +619,13 @@
         <li class="md-nav__item">
   <a href="#managing-individual-user-disks" class="md-nav__link">
     Managing Individual User Disks
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#change-the-idle-timeout-for-user-servers" class="md-nav__link">
+    Change the Idle Timeout for User Servers
   </a>
   
 </li>
@@ -838,6 +852,17 @@ customizations<span class="w">  </span>generated_resources<span class="w">  </sp
 </code></pre></div>
 
 <p>The backup archive produced by <code>modelonimpact.sh backup</code> contains, among other data, all user disks. It's possible to unpack the backup file in a temporary location, and copy files from there to your user disk.</p>
+<h2 id="change-the-idle-timeout-for-user-servers">Change the Idle Timeout for User Servers<a class="headerlink" href="#change-the-idle-timeout-for-user-servers" title="Permanent link">&#128279;</a></h2>
+<p>Each user's Modelon Impact server is stopped automatically after a period of inactivity, to free up resources on the server. The default is 1 hour (3600 seconds). User data is kept, and the server starts again the next time the user logs in.</p>
+<p>To change the timeout, set <code>IMPACT_NOTEBOOK_IDLE_TIMEOUT</code> (in seconds) in <code>/etc/impact/config</code>. For example, to stop idle servers after 2 hours:</p>
+<div class="codehilite"><pre><span></span><code><span class="nv">IMPACT_NOTEBOOK_IDLE_TIMEOUT</span><span class="o">=</span><span class="m">7200</span>
+</code></pre></div>
+
+<p>Then rebuild the installation to apply the change. The service will be unavailable for a few minutes, so make sure no users are working in the system.</p>
+<div class="codehilite"><pre><span></span><code>$<span class="w"> </span>/var/impact/modelonimpact.sh<span class="w"> </span>install
+</code></pre></div>
+
+<p>Idle servers are checked every 5 minutes, so the timeout must be at least 300 seconds, and a server may run up to 5 minutes longer than the configured timeout.</p>
 <h2 id="fixing-a-corrupt-installation-of-modelon-impact">Fixing a Corrupt Installation of Modelon Impact<a class="headerlink" href="#fixing-a-corrupt-installation-of-modelon-impact" title="Permanent link">&#128279;</a></h2>
 <p>The installation can become corrupt in certain cases. This could happen if the server is not cleanly rebooted, or if there are errors in the configuration file.</p>
 <p>In most cases, you can repair a corrupt instance by running the installer again.</p>
